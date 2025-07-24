@@ -14,3 +14,5 @@ pip install -r requirements.txt
 uvicorn backend.main:app --reload
 
 # フロントは、frontend/index.html をブラウザで開いてください
+
+# ※現在はユーザごとの管理は実装できていません
