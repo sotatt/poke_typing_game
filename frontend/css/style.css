@@ -1,0 +1,31 @@
+:root {
+    --color-bg-main: #F8FDFF;
+    --color-bg-header: #E9F3FF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--color-bg-main);
+    /* overflow: hidden; はみ出し防止 */
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: var(--color-bg-main);
+    /* overflow: hidden; */
+  }
+  
+  .header-bg {
+    width: 100%;
+    height: 50%; /* 高さの比率調整 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-header);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);   /* TODO: 影でない */
+
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+  }

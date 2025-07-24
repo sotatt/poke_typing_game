@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ステージ選択</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/stage_select.css" />
+  </head>
+  <body>
+    <div id="region-popup" style="display: flex">
+      <div
+        style="position: relative; width: 65vw; max-width: 90vw; margin: auto"
+      >
+        <!-- 上に重ねたいボックス -->
+        <div class="popup-header">
+          <span class="popup-title">地方選択</span>
+        </div>
+
+        <!-- メインの四角いポップアップ -->
+        <div class="popup-content">
+          <div class="region-buttons">
+            <button class="region-button" data-region="kanto">
+              カントー地方
+            </button>
+            <button class="region-button" data-region="johto">
+              ジョウト地方
+            </button>
+            <button class="region-button" data-region="hoenn">
+              ホウエン地方
+            </button>
+            <button class="region-button" data-region="sinnoh">
+              シンオウ地方
+            </button>
+            <button class="region-button" data-region="unova">
+              イッシュ地方
+            </button>
+            <button class="region-button" data-region="kalos">
+              カロス地方
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="difficulty-popup" style="display: none">
+      <div
+        style="position: relative; width: 65vw; max-width: 90vw; margin: auto"
+      >
+        <!-- 上に重ねたいボックス -->
+        <div class="popup-header">
+          <span class="popup-title">難易度</span>
+        </div>
+
+        <!-- メインの四角いポップアップ -->
+        <div class="popup-content">
+          <div class="region-name" id="region-name"></div>
+          <div class="difficulty-button">
+            <button class="difficulty-easy-button">
+              <div class="green_star-icon-wrapper">
+                <img src="images/green_star.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+            </button>
+            <button class="difficulty-normal-button">
+              <div class="orenge_star-icon-wrapper">
+                <img src="images/orange_star.png" />
+              </div>
+              <div class="orenge_star-icon-wrapper">
+                <img src="images/orange_star.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+            </button>
+            <button class="difficulty-hard-button">
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 地域選択ボタンのクリックイベント
+      document.querySelectorAll(".region-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const region = button.dataset.region;
+          localStorage.setItem("selectedRegion", region);
+          document.getElementById("region-popup").style.display = "none";
+          document.getElementById("difficulty-popup").style.display = "flex";
+
+          const regionNames = {
+            kanto: "カントー地方",
+            johto: "ジョウト地方",
+            hoenn: "ホウエン地方",
+            sinnoh: "シンオウ地方",
+            unova: "イッシュ地方",
+            kalos: "カロス地方",
+          };
+          document.getElementById("region-name").textContent =
+            regionNames[region];
+        });
+      });
+
+      // 難易度ボタンのクリックイベント
+      document.querySelectorAll(".difficulty-easy-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          startGame("easy");
+        });
+      });
+
+      document
+        .querySelectorAll(".difficulty-normal-button")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            startGame("normal");
+          });
+        });
+
+      document.querySelectorAll(".difficulty-hard-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          startGame("hard");
+        });
+      });
+
+      function startGame(difficulty) {
+        localStorage.setItem("selectedDifficulty", difficulty);
+        window.location.href = "game.html";
+      }
+    </script>
+  </body>
+</html>

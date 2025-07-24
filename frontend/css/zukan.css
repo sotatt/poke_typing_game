@@ -1,0 +1,202 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Corporate Logo Rounded ver3', 'FOT-Rodin Pro', sans-serif;
+  background: #F8FDFF;
+  overflow: hidden;
+}
+
+.zukan-title {
+  position: relative;
+  top: 1vh;
+  color: #3E4651;
+  font-size: 58px;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 3vw;
+  text-shadow:
+    -2px -2px 0 #F8FDFF,
+    2px -2px 0 #F8FDFF,
+    -2px 2px 0 #F8FDFF,
+    2px 2px 0 #F8FDFF;
+}
+
+.zukan-completion-label {
+  position: absolute;
+  left: 393px;
+  top: 133px;
+  color: #3E4651;
+  font-size: 24px;
+  font-family: 'FOT-Rodin Pro', sans-serif;
+  font-weight: 600;
+  text-shadow:
+    -2px -2px 0 #F8FDFF,
+    2px -2px 0 #F8FDFF,
+    -2px 2px 0 #F8FDFF,
+    2px 2px 0 #F8FDFF;
+}
+
+.zukan-completion-rate {
+  position: absolute;
+  left: 809px;
+  top: 119px;
+  display: flex;
+  align-items: flex-end;
+}
+.zukan-completion-rate .rate {
+  color: #3E4651;
+  font-size: 40px;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+}
+.zukan-completion-rate .percent {
+  color: #3E4651;
+  font-size: 24px;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+}
+
+.zukan-pokemon-area {
+  position: absolute;
+  top: 270px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 270px);
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding-left: 34px;
+  padding-top: 0;
+  gap: 13px 13px;
+}
+
+.zukan-pokemon-box {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  outline: 1px #3E4651 solid;
+  outline-offset: -0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-shadow: none;
+}
+
+.zukan-pokemon-imgbox {
+  width: 140px;
+  height: 140px;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.25);
+  outline: 1px #3E4651 solid;
+  outline-offset: -0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.zukan-pokemon-num {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  color: #AEC3DE;
+  font-size: 48px;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.zukan-pokemon-imgbox img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+
+.uncaptured {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
+.result-completion {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.result-completion-label {
+  font-size: 24px;
+  color: #3E4651;
+  font-family: 'FOT-Rodin Pro', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  padding-bottom: 1vw;
+  text-shadow:
+    -2px -2px 0 #F8FDFF,
+    2px -2px 0 #F8FDFF,
+    -2px 2px 0 #F8FDFF,
+    2px 2px 0 #F8FDFF;
+}
+
+.result-completion__box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.result-completion-number {
+  font-size: 40px;
+  color: #3E4651;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+  text-shadow:
+    -2px -2px 0 #F8FDFF,
+    2px -2px 0 #F8FDFF,
+    -2px 2px 0 #F8FDFF,
+    2px 2px 0 #F8FDFF;
+}
+
+.result-completion-percent {
+  font-size: 24px;
+  padding-top: 20px;
+  color: #3E4651;
+  font-family: 'Corporate Logo Rounded ver3', sans-serif;
+  font-weight: 700;
+  text-shadow:
+    -2px -2px 0 #F8FDFF,
+    2px -2px 0 #F8FDFF,
+    -2px 2px 0 #F8FDFF,
+    2px 2px 0 #F8FDFF;
+}
+
+/*.result-completion__line {
+  height: 80px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 8px;
+  width: 100%; 
+  position: relative;
+  overflow: hidden;
+}
+*/
+.result-completion__line-inner {
+  height: 100%;
+  background: linear-gradient(to right, var(--color-btn-start1) 0%, var(--color-btn-start2) 18%, var(--color-btn-start3) 41%, var(--color-btn-start4) 70%);
+  border-radius: 4px;
+  transition: width 0.5s;
+  width: 0%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

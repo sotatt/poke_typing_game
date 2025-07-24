@@ -1,0 +1,220 @@
+:root {
+    --color-bg-main: #F8FDFF;
+    --color-bg-header: #E9F3FF;
+    /* 影ようだが、使用していない
+    --color-shadow-header: #CBCBCB(0, 0, 0, 0.25);
+    --color-shadow-button: #000000(0, 0, 0, 0.25); */
+
+    --color-logo-text: #FECC02;
+    --color-logo-stroke: #3856A0;
+    --color-logo-sub: #3E4651;
+
+    --color-btn-start1: #8CEEE8;
+    --color-btn-start2: #8CEBE6;
+    --color-btn-start3: #5DE1DA;
+    --color-btn-start4: #4CD6CF;
+    --color-btn-start-text: #FBFDFF;
+
+    --color-btn-settings-border: #3E4651;
+    --color-btn-settings-bg: #F8FDFF;
+    --color-btn-settings-text: #3E4651;
+}
+  
+  
+.difficulty-title {
+    font-family: 'Corporate Logo Rounded ver3', sans-serif; 
+    font-size: 1.7rem;
+    align-self: center;
+}
+
+.result-container {
+    position: relative;
+    width: 65vw;
+    max-width: 90vw;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-header {
+    position: absolute;
+    top: 1vh;
+    width: 62vw;
+    text-align: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #f8fdff;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.result-box {
+    background: #f8fdff;
+    border: 10px #3e4651 solid;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 65vw;
+    height: 60vh;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-content {
+    width: 613px;
+    height: 344px;
+    position: relative;
+}
+
+.result-content__streak-content {
+    position: relative;
+    width: 70%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.result-content__line {
+    position: absolute;
+    bottom: 2vh;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #3E4651;
+    border-radius: 9999px;
+}
+
+.result-completion__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #fff;
+    border-radius: 9999px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.result-number {
+    position: absolute;
+    right: 0;
+    color: #3E4651;
+    font-size: 58px;
+    font-family: 'Corporate Logo Rounded ver3', sans-serif;
+    font-weight: 700;
+    -webkit-text-stroke: 3px #FBFDFF;
+}
+
+.result-label {
+    position: absolute;
+    left: 0.5vw;
+    color: #3E4651;
+    font-size: 32px;
+    font-family: 'FOT-Rodin Pro', sans-serif;
+    font-weight: 600;
+    -webkit-text-stroke: 1px #FBFDFF;
+}
+
+.result-streak {
+    top: 0;
+}
+
+.result-streak-label {
+    top: 29px;
+    
+}
+
+.result-caught {
+    top: 86px;
+}
+
+.result-caught-label {
+    top: 117px;
+}
+
+.result-completion{
+    position: relative;
+    top: 5vh;
+}
+
+.result-completion__box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.result-completion-number {
+    color: #3E4651;
+    font-size: 58px;
+    font-family: 'Corporate Logo Rounded ver3', sans-serif;
+    font-weight: 700;
+}
+
+.result-completion-percent {
+    color: #3E4651;
+    font-size: 32px;
+    font-family: 'Corporate Logo Rounded ver3', sans-serif;
+    font-weight: 700;
+}
+
+.result-completion-label {
+    position: absolute;
+    left: 6.08px;
+    bottom: 0;
+    color: #3E4651;
+    font-size: 32px;
+    font-family: 'FOT-Rodin Pro', sans-serif;
+    font-weight: 600;
+}
+
+.close-button-container {
+    width: 176px;
+    height: 71px;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+}
+
+.close-button {
+    width: 176px;
+    height: 71px;
+    position: absolute;
+    background: #FBFDFF;
+    border: 1px #3e4651 solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 28px;
+    font-family: 'FOT-Rodin Pro', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+
+/* .settings-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 8vh;
+    font-size: 2vw;
+    font-family: 'FOT-Rodin Pro', sans-serif;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.settings-button {
+top: 70%;
+background: var(--color-btn-settings-bg);
+color: var(--color-btn-settings-text);
+border: 1px solid var(--color-btn-settings-border);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+} */

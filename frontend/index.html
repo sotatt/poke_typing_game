@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ゲームスタート画面</title>
+
+    <!-- Webフォント読み込み（必要なら） -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-bg"></div>
+
+      <h1 class="logo-title">
+        <span class="logo-main">Poket</span
+        ><span class="logo-sub">タイピング</span>
+      </h1>
+
+      <button class="start-button" onclick="goToHome()">スタート</button>
+      <button class="settings-button">設定</button>
+    </div>
+
+    <script>
+      function goToHome() {
+        window.location.href = "home.html";
+      }
+    </script>
+  </body>
+</html>

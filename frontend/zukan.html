@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>図鑑</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSSファイル読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/zukan.css" />
+    <link rel="stylesheet" href="css/result.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-bg"></div>
+        <div class="zukan-title">ポケモンずかん</div>
+
+        <!-- 図鑑完成度表示エリア -->
+        <div class="result-completion">
+          <div class="result-completion-label">図鑑完成度</div>
+          <div class="result-completion__box">
+            <span class="result-completion-number">0</span>
+            <span class="result-completion-percent">%</span>
+          </div>
+          <div class="result-completion__line">
+            <div class="result-completion__line-inner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ポケモン表示エリア -->
+      <div class="zukan-pokemon-area">
+        <div class="zukan-pokemon-box">
+          <div class="zukan-pokemon-num">001</div>
+          <div class="zukan-pokemon-imgbox">
+            <img src="https://placehold.co/130x130" alt="ポケモン画像" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/zukan.js"></script>
+  </body>
+</html>

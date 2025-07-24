@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ゲーム画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div class="streak-counter">
+      <div class="streak-counter__line"></div>
+      <div class="streak-counter__number">0</div>
+      <div class="streak-counter__label">れんぞく</div>
+    </div>
+
+    <div class="top-counter">
+      <img
+        src="images/poke_ball.png"
+        alt="ポケボール"
+        class="top-counter__poke-ball-img"
+      />
+      <div class="top-counter__score">0</div>
+      <div class="top-counter__line"></div>
+    </div>
+
+    <div class="pokemon-display">
+      <img
+        src="images/zoroa.png"
+        alt="ポケモン"
+        class="pokemon-display__image"
+        id="pokemonImage"
+      />
+    </div>
+
+    <div class="input-form">
+      <div class="input-form__background"></div>
+      <div class="input-form__content">
+        <div class="input-form__text">
+          <span class="input-form__text--typed"></span>
+          <span class="input-form__text--remaining"></span>
+        </div>
+        <div class="input-form__text input-form__text--kana">
+          <span class="input-form__text--typed"></span>
+          <span class="input-form__text--remaining"></span>
+        </div>
+        <input
+          type="text"
+          class="input-form__input"
+          autocomplete="off"
+          spellcheck="false"
+          tabindex="-1"
+          inputmode="latin"
+          pattern="[A-Za-z0-9\-]*"
+        />
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/wanakana"></script>
+    <script src="js/romanTypingDictionary.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>

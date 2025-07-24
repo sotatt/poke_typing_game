@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>リザルト画面</title>
+
+    <!-- Webフォント読み込み（必要なら） -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/result.css" />
+    <link rel="stylesheet" href="css/zukan.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-bg"></div>
+      <div class="result-container">
+        <!-- 上に重ねたいボックス -->
+        <div class="result-header">
+          <span class="difficulty-title">リザルト</span>
+        </div>
+
+        <!-- メインの四角いポップアップ -->
+        <div class="result-box">
+          <div class="result-content">
+            <div class="result-content__streak-content">
+              <div class="result-content__line"></div>
+              <div class="result-number result-streak" id="max-streak">0</div>
+              <div class="result-label result-streak-label">れんぞく</div>
+            </div>
+            <div class="result-content__streak-content">
+              <div class="result-content__line"></div>
+              <div class="result-number result-streak" id="total-caught">0</div>
+              <div class="result-label result-streak-label">捕まえた数</div>
+            </div>
+            <div class="result-content__streak-content">
+              <div class="result-content__line"></div>
+              <div class="result-number result-streak" id="total-score">0</div>
+              <div class="result-label result-streak-label">スコア</div>
+            </div>
+            <!-- <div class="result-completion">
+              <div class="result-completion-label">図鑑完成度</div>
+              <div class="result-completion__box">
+                <span class="result-completion-number">0</span>
+                <span class="result-completion-percent">%</span>
+              </div>
+              <div class="result-completion__line">
+                <div class="result-completion__line-inner"></div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <!-- 閉じるボタン -->
+        <div class="close-button-container">
+          <button
+            class="close-button"
+            onclick="window.location.href='home.html'"
+          >
+            とじる
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ゲーム結果の取得
+        const gameResult = JSON.parse(
+          localStorage.getItem("gameResult") || "{}"
+        );
+
+        // 結果の表示
+        document.getElementById("max-streak").textContent =
+          gameResult.maxStreak || 0;
+        document.getElementById("total-caught").textContent =
+          gameResult.totalCaught || 0;
+        document.getElementById("total-score").textContent =
+          gameResult.score || 0;
+      });
+    </script>
+  </body>
+</html>

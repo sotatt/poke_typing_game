@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ホーム画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ホーム画面専用CSS（任意） -->
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/stage_select.css" />
+  </head>
+  <body>
+    <div class="home-wrapper">
+      <img class="home-background" src="images/stage.png" />
+      <!-- カントー地方 -->
+      <button
+        class="region-button"
+        style="left: 14vw; top: 23.5vh"
+        onclick="showDifficultyPopup('kanto')"
+      >
+        <div></div>
+        <div>カントー地方</div>
+      </button>
+
+      <!-- ホウエン地方 -->
+      <button
+        class="region-button"
+        style="left: 19vw; top: 49vh"
+        onclick="showDifficultyPopup('hoenn')"
+      >
+        <div></div>
+        <div>ホウエン地方</div>
+      </button>
+
+      <!-- ジョウト地方 -->
+      <button
+        class="region-button"
+        style="left: 14vw; top: 84vh"
+        onclick="showDifficultyPopup('johto')"
+      >
+        <div></div>
+        <div>ジョウト地方</div>
+      </button>
+
+      <!-- シンオウ地方 -->
+      <button
+        class="region-button"
+        style="left: 56vw; top: 26vh"
+        onclick="showDifficultyPopup('sinnoh')"
+      >
+        <div></div>
+        <div>シンオウ地方</div>
+      </button>
+
+      <!-- イッシュ地方 -->
+      <button
+        class="region-button"
+        style="left: 66vw; top: 54vh"
+        onclick="showDifficultyPopup('unova')"
+      >
+        <div></div>
+        <div>イッシュ地方</div>
+      </button>
+
+      <!-- カロス地方 -->
+      <button
+        class="region-button"
+        style="left: 67.5vw; top: 84vh"
+        onclick="showDifficultyPopup('kalos')"
+      >
+        <div></div>
+        <div style="left: 31px">カロス地方</div>
+      </button>
+
+      <!-- 左下角のランキングボタン -->
+      <button class="ranking-button" onclick="goToRanking()">
+        <div class="ranking-decoration"></div>
+        <div class="ranking-icon-wrapper">
+          <img src="images/crown.png" />
+        </div>
+      </button>
+
+      <!-- 右下角の図鑑ボタン -->
+      <button class="zukan-button" onclick="goToZukan()">
+        <div class="zukan-decoration"></div>
+        <div class="zukan-icon-wrapper">
+          <img src="images/zukan.png" />
+        </div>
+      </button>
+    </div>
+
+    <!-- 難易度選択ポップアップ -->
+    <div id="difficulty-popup" class="difficulty-popup">
+      <div class="difficulty-popup__container">
+        <!-- 上に重ねたいボックス -->
+        <div class="difficulty-popup__header">
+          <span class="difficulty-title">難易度</span>
+        </div>
+
+        <!-- メインの四角いポップアップ -->
+        <div class="difficulty-popup__content">
+          <div class="region-name" id="region-name"></div>
+          <div class="difficulty-button">
+            <button class="difficulty-easy-button" onclick="startGame('easy')">
+              <div class="green_star-icon-wrapper">
+                <img src="images/green_star.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+            </button>
+            <button
+              class="difficulty-normal-button"
+              onclick="startGame('normal')"
+            >
+              <div class="orenge_star-icon-wrapper">
+                <img src="images/orange_star.png" />
+              </div>
+              <div class="orenge_star-icon-wrapper">
+                <img src="images/orange_star.png" />
+              </div>
+              <div class="star-outline-icon-wrapper">
+                <img src="images/star-outline.png" />
+              </div>
+            </button>
+            <button class="difficulty-hard-button" onclick="startGame('hard')">
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+              <div class="red_star-icon-wrapper">
+                <img src="images/red_star.png" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let selectedRegion = "";
+
+      function showDifficultyPopup(region) {
+        selectedRegion = region;
+        const regionNames = {
+          kanto: "カントー地方",
+          johto: "ジョウト地方",
+          hoenn: "ホウエン地方",
+          sinnoh: "シンオウ地方",
+          unova: "イッシュ地方",
+          kalos: "カロス地方",
+        };
+        document.getElementById("region-name").textContent =
+          regionNames[region];
+        document.getElementById("difficulty-popup").style.display = "flex";
+      }
+
+      function hideDifficultyPopup() {
+        document.getElementById("difficulty-popup").style.display = "none";
+      }
+
+      function startGame(difficulty) {
+        // 地域と難易度情報をローカルストレージに保存
+        localStorage.setItem("selectedRegion", selectedRegion);
+        localStorage.setItem("selectedDifficulty", difficulty);
+        // ゲーム画面に遷移
+        window.location.href = "game.html";
+      }
+
+      function goToRanking() {
+        window.location.href = "ranking.html";
+      }
+
+      function goToZukan() {
+        window.location.href = "zukan.html";
+      }
+
+      // ポップアップ外をクリックしたら閉じる
+      document
+        .getElementById("difficulty-popup")
+        .addEventListener("click", (e) => {
+          if (e.target === document.getElementById("difficulty-popup")) {
+            hideDifficultyPopup();
+          }
+        });
+    </script>
+  </body>
+</html>

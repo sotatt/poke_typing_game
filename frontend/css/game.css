@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../images/game_screen.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.streak-counter {
+    width: 223px;
+    height: 97px;
+    position: relative;
+    margin: 20px;
+}
+
+.streak-counter__number {
+    width: 55px;
+    height: 41px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #3E4651;
+    -webkit-text-stroke: 3px #FBFDFF;
+    font-size: 64px;
+    font-family: "Corporate Logo Rounded ver3", sans-serif;
+    font-weight: 700;
+}
+
+.streak-counter__label {
+    position: absolute;
+    left: 9px;
+    top: 41px;
+    color: #3E4651;
+    -webkit-text-stroke: 1px #FBFDFF;
+    font-size: 30px;
+    font-family: "FOT-Rodin Pro", sans-serif;
+    font-weight: 600;
+}
+
+.streak-counter__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #FECC02;
+    border-radius: 9999px;
+}
+
+.top-counter {
+    position: absolute;
+    top: 20px;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.top-counter__poke-ball-img {
+    width: 60px;
+    height: 60px;
+}
+
+.top-counter__score {
+    position: relative;
+    bottom: 1vh;
+    color: #3E4651;
+    -webkit-text-stroke: 3px #FBFDFF;
+    font-size: 64px;
+    font-family: "Corporate Logo Rounded ver3", sans-serif;
+    font-weight: 700;
+}
+
+.top-counter__line {
+    position: absolute;
+    top: 8.8vh;
+    left: 84%;
+    transform: translateX(-50%);
+    width: 12vw;
+    height: 2px;
+    background-color: #3E4651;
+    border-radius: 9999px;
+}
+
+.pokemon-display {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-display__image {
+    object-fit: contain;
+}
+
+.input-form {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 526px;
+    height: 279px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.input-form__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(217, 217, 217, 0.50);
+    border-radius: 20px;
+    border: 10px #2D86C8 solid;
+}
+
+.input-form__background::after {
+    content: '';
+    position: absolute;
+    bottom: 0.4vh;
+    left: 0;
+    width: 100%;
+    height: 1.7vh;
+    background: #fff;
+    border-radius: 20px;
+    transition: background 1s linear;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* .input-form__background--time-progress {
+    background: #4FF37C;
+} */
+
+.input-form__background--time-progress::after {
+    position: absolute;
+    bottom: 1%;
+    background: linear-gradient(to right, #4FF37C 0%, #4FF37C var(--progress, 0%), #FBFDFF var(--progress, 0%));
+}
+
+.input-form__content {
+    width: 100%;
+    height: 246px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 20px;
+    border: 10px #2D86C8 solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form__text {
+    color: #3E4651;
+    font-size: 80px;
+    font-family: "Corporate Logo Rounded ver3", sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.input-form__input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: text;
+}
+
+.input-form__text--typed {
+    color: #FA0F0F;
+}
+
+.input-form__text--remaining {
+    color: #3E4651;
+}
+
+.input-form__text--kana {
+    margin-top: 10px;
+} 

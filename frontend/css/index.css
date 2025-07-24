@@ -1,0 +1,84 @@
+:root {
+    --color-bg-main: #F8FDFF;
+    --color-bg-header: #E9F3FF;
+    /* 影ようだが、使用していない
+    --color-shadow-header: #CBCBCB(0, 0, 0, 0.25);
+    --color-shadow-button: #000000(0, 0, 0, 0.25); */
+    
+    --color-logo-text: #FECC02;
+    --color-logo-stroke: #3856A0;
+    --color-logo-sub: #3E4651;
+    
+    --color-btn-start1: #8CEEE8;
+    --color-btn-start2: #8CEBE6;
+    --color-btn-start3: #5DE1DA;
+    --color-btn-start4: #4CD6CF;
+    --color-btn-start-text: #FBFDFF;
+    
+    --color-btn-settings-border: #3E4651;
+    --color-btn-settings-bg: #F8FDFF;
+    --color-btn-settings-text: #3E4651;
+  }
+  
+  .logo-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .logo-title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    white-space: nowrap; /* 改行防止 */
+  }
+  
+  .logo-main {
+    font-family: 'Pocket Monk', sans-serif;
+    font-size: 9vw;
+    color: var(--color-logo-text);
+    -webkit-text-stroke: 5px var(--color-logo-stroke); /* ここで線の太さと色を指定 */
+  }
+  
+  .logo-sub {
+    font-family: 'Corporate Logo Rounded ver3', sans-serif;
+    font-size: 5vw;
+    color: var(--color-logo-sub);
+    font-weight: bold;
+  }
+
+  .start-button,
+  .settings-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 8vh;
+    font-size: 2vw;
+    font-family: 'FOT-Rodin Pro', sans-serif;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .start-button {
+    top: 55%;
+    background: linear-gradient(90deg, var(--color-btn-start1) 0%, var(--color-btn-start2) 18%, var(--color-btn-start3) 41%, var(--color-btn-start4) 99%);
+    color: var(--color-btn-start-text);
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .settings-button {
+    top: 70%;
+    background: var(--color-btn-settings-bg);
+    color: var(--color-btn-settings-text);
+    border: 1px solid var(--color-btn-settings-border);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }

@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #BBD5CD;
+    --text-color: #3A7C83;
+    --font-family: 'FOT-Rodin Pro', sans-serif;
+    --font-weight: 600;
+    --font-size: 2.8vh;
+    --border-radius: 18px;
+  }
+  .home-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #FBFDFF;
+    overflow: hidden;
+  }
+  .home-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .region-button {
+    width: 14.6vw;
+    height: 5.9vh;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+  }
+  .region-button > div:first-child {
+    width: 14.6vw;
+    height: 4vh;
+    position: absolute;
+    left: 0;
+    top: 0.5vh;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+  }
+  .region-button > div:last-child {
+    position: absolute;
+    top: 0;
+    color: var(--text-color);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .ranking-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .ranking-decoration {
+    width: 73px;
+    height: 73px;
+    background: #F8FDFF;
+    border-top-right-radius: 57.5px;
+    outline: 5px solid #3E4651;
+  }
+  
+  .ranking-icon-wrapper {
+    position: absolute;
+    left: 11px;
+    bottom: 11px;
+    width: 37px;
+    height: 37px;
+  }
+  
+  .ranking-icon-wrapper img {
+    width: 2.5vw;
+    height: 3.5vh;
+    margin: auto;
+    position: absolute;
+    left: 0.2vw;
+    top: 0.1vh;
+  }
+  .zukan-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .zukan-decoration {
+    width: 73px;
+    height: 73px;
+    background: #F8FDFF;
+    border-top-right-radius: 57.5px;
+    outline: 5px solid #3E4651;
+    transform: rotate(270deg);
+    transform-origin: center;
+  }
+  
+  .zukan-icon-wrapper {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    width: 37px;
+    height: 37px;
+  }
+  
+  .zukan-icon-wrapper img {
+    width: 2.5vw;
+    height: 4vh;
+    margin: auto;
+    position: absolute;
+    right: 0.2vw;
+    top: 0.1vh;
+  }
